@@ -1,0 +1,294 @@
+<!-- polaroid fuckkk -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>POLAROID MINI</title>
+  <link rel="manifest" href="manifest.json">
+<!-- Android/Chrome Icon -->
+<link rel="icon" sizes="192x192" href="./icons/web-app-manifest-192x192.png">
+<link rel="icon" sizes="512x512" href="./icons/web-app-manifest-512x512.png">
+
+  
+  <style>
+    body {
+      margin: 0;
+      font-family:Arial, Helvetica, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #dd7171;
+      /* background adjustment can be removed if want */
+      /* background: url(./images/roses.jpg);
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed; */
+    }
+
+    .music-player {
+      width: 250px;
+      height: 400px;
+      background: linear-gradient(to bottom, #f9c5d1, #f0a2c2);
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+
+    .music-player img {
+      width: 100%;
+      height: 200px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    .song-title {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: 18px;
+      font-weight: bold;
+      color: #fff;
+      margin-top: 25px ;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    .play-btn {
+      background: none;
+      border: 5px solid #fff;
+      border-radius: 50%;
+      color: #fff;
+      font-size: 18px;
+      margin-top: 25px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .next-btn, .prev-btn{
+        background: none;
+      border: 5px solid #dd7171;
+      border-radius: 50%;
+      color: #ffffff;
+      font-size: 18px;
+      margin-top: 25px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .play-btn:hover, .next-btn:hover, .prev-btn:hover {
+      background-color: #fff;
+      color: #f0a2c2;
+    }
+
+    .note-section {
+      width: 80%;
+      background: #fff;
+      border-radius: 10px;
+      padding: 4px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      font-size: 14px;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      color: #222;
+      margin-top: 32px;
+      margin-left: 19px;
+    }
+
+    .song-container {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <!-- Song 1 -->
+    <div class="music-player song-container" id="song1">
+      <img src="images/vk (1).avif" alt="Album Art">
+      <div class="song-title">The Night We Met</div>
+      <audio id="audio1" src="songs/The-Night-We-Met.mp3"></audio>
+      <div class="controls">
+        <button class="prev-btn" id="prev-btn1">⯇</button>
+        <button class="play-btn" id="play-btn1">▶</button>
+        <button class="next-btn" id="next-btn1">⯈</button>
+      </div>
+      <div class="note-section" id="note-section1">I am not the only traveler
+        Who has not repaid his debt</div>
+    </div>
+
+    <!-- Song 2 -->
+    <div class="music-player song-container" id="song2">
+      <img src="images/vk (1).jpg" alt="Album Art">
+      <div class="song-title">Cinnamon Girl</div>
+      <audio id="audio2" src="songs/Lana-Del-Rey-Cinnamon-Girl-(RawPraise.ng).mp3"></audio>
+      <div class="controls">
+        <button class="prev-btn" id="prev-btn2">⯇</button>
+        <button class="play-btn" id="play-btn2">▶</button>
+        <button class="next-btn" id="next-btn2">⯈</button>
+      </div>
+      <div class="note-section" id="note-section2">I am not the only traveler Who has not repaid his debt</div>
+    </div>
+
+    <!-- Song 3 -->
+    <div class="music-player song-container" id="song3">
+      <img src="images/download.jpg" alt="Album Art">
+      <div class="song-title">Another Love</div>
+      <audio id="audio3" src="songs/MuzBox_tom_odell_another_love_mp3_71750.mp3"></audio>
+      <div class="controls">
+        <button class="prev-btn" id="prev-btn3">⯇</button>
+        <button class="play-btn" id="play-btn3">▶</button>
+        <button class="next-btn" id="next-btn3">⯈</button>
+      </div>
+      <div class="note-section" id="note-section3">I am not the only traveler Who has not repaid his debt</div>
+    </div>
+  </div>
+  <!-- song 4 -->
+  <div class="music-player song-container" id="song4">
+    <img src="images/vk (2).jpg" alt="Album Art">
+    <div class="song-title">Those Eyes</div>
+    <audio id="audio4" src="songs/Those Eyes.mpeg.mp3"></audio>
+    <div class="controls">
+      <button class="prev-btn" id="prev-btn4">⯇</button>
+      <button class="play-btn" id="play-btn4">▶</button>
+      <button class="next-btn" id="next-btn4">⯈</button>
+    </div>
+    <div class="note-section" id="note-section2">'Cause all of the small things that you do
+      Are what remind me why I fell for you</div>
+  </div>
+  <!-- song 5 -->
+  <div class="music-player song-container" id="song5">
+    <img src="images/vk (1).jpg" alt="Album Art">
+    <div class="song-title">Wildflower</div>
+    <audio id="audio5" src="songs/Wildflower.mpeg.mp3"></audio>
+    <div class="controls">
+      <button class="prev-btn" id="prev-btn5">⯇</button>
+      <button class="play-btn" id="play-btn5">▶</button>
+      <button class="next-btn" id="next-btn5">⯈</button>
+    </div>
+    <div class="note-section" id="note-section2">I am not the only traveler Who has not repaid his debt</div>
+  </div>
+  <!-- song 6 -->
+  <div class="music-player song-container" id="song6">
+    <img src="images/vk (1).avif" alt="Album Art">
+    <div class="song-title">Tum Ho</div>
+    <audio id="audio6" src="songs/Tum Ho Rockstar 128 Kbps.mp3"></audio>
+    <div class="controls">
+      <button class="prev-btn" id="prev-btn6">⯇</button>
+      <button class="play-btn" id="play-btn6">▶</button>
+      <button class="next-btn" id="next-btn6">⯈</button>
+    </div>
+    <div class="note-section" id="note-section2">Kahin Se.. Kahin Ko.. Bhi Aao Bewajah Chale Poochhe Bina Kisi Se Hum Mile
+      </div>
+  </div>
+  <!-- song 7 -->
+  <div class="music-player song-container" id="song7">
+    <img src="images/Virat Kohli 2024 T20 World Cup HD Pictures.jpg" alt="Album Art">
+    <div class="song-title">Jo Tum Mere Ho</div>
+    <audio id="audio7" src="songs/Jo Tum Mere Ho Anuv Jain 128 Kbps.mp3"></audio>
+    <div class="controls">
+      <button class="prev-btn" id="prev-btn7">⯇</button>
+      <button class="play-btn" id="play-btn7">▶</button>
+      <button class="next-btn" id="next-btn7">⯈</button>
+    </div>
+    <div class="note-section" id="note-section2">Aur aaoge, aise aaoge
+      Teri-meri kya ye raahein yoon judi hain?</div>
+  </div>
+
+  <script>
+    // JavaScript logic to control song switching
+
+    let currentSongIndex = 1;
+
+    const songs = ['song1', 'song2', 'song3' , 'song4' , 'song5','song6','song7'];
+
+    function updatePlayer(songIndex) {
+      // Hide all songs
+      songs.forEach(song => {
+        document.getElementById(song).style.display = "none";
+      });
+
+      // Show current song
+      const currentSong = songs[songIndex - 1];
+      document.getElementById(currentSong).style.display = "block";
+      
+      // Set play/pause button
+      const playBtn = document.getElementById("play-btn" + songIndex);
+      const audioPlayer = document.getElementById("audio" + songIndex);
+
+      playBtn.addEventListener("click", () => {
+        if (audioPlayer.paused) {
+          audioPlayer.play();
+          playBtn.textContent = "||";
+        } else {
+          audioPlayer.pause();
+          playBtn.textContent = "▶";
+        }
+      });
+    }
+
+    // Initial Song Display
+    updatePlayer(currentSongIndex);
+
+    // Next Song
+    function nextSong() {
+      currentSongIndex = (currentSongIndex % songs.length) + 1;
+      updatePlayer(currentSongIndex);
+    }
+
+    // Previous Song
+    function prevSong() {
+      currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length || songs.length;
+      updatePlayer(currentSongIndex);
+    }
+
+    // Event listeners for next and previous buttons
+    document.getElementById("next-btn1").addEventListener("click", nextSong);
+    document.getElementById("prev-btn1").addEventListener("click", prevSong);
+
+    document.getElementById("next-btn2").addEventListener("click", nextSong);
+    document.getElementById("prev-btn2").addEventListener("click", prevSong);
+
+    document.getElementById("next-btn3").addEventListener("click", nextSong);
+    document.getElementById("prev-btn3").addEventListener("click", prevSong);
+
+    document.getElementById("next-btn4").addEventListener("click", nextSong);
+    document.getElementById("prev-btn4").addEventListener("click", prevSong);
+
+    document.getElementById("next-btn5").addEventListener("click", nextSong);
+    document.getElementById("prev-btn5").addEventListener("click", prevSong);
+
+    document.getElementById("next-btn6").addEventListener("click", nextSong);
+    document.getElementById("prev-btn6").addEventListener("click", prevSong);
+
+    document.getElementById("next-btn7").addEventListener("click", nextSong);
+    document.getElementById("prev-btn7").addEventListener("click", prevSong);
+
+
+    if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/service-worker.js")
+      .then((registration) => console.log("Service Worker Registered", registration))
+      .catch((error) => console.log("Service Worker Registration Failed", error));
+  });
+}
+  </script>
+</body>
+</html>
